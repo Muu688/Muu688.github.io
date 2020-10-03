@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Advertiser Helper</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css" integrity="sha512-YYS7fyqDxVE/yJ1280i8KjA+nC7wAtv2u/qkulKbdMpmp8DBWX0Wj+HtILsFyvq+fouCwCyr0hasPAz1eBlvwA==" crossorigin="anonymous" />
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.js" integrity="sha512-8F/2JIwyPohlMVdqCmXt6A6YQ9X7MK1jHlwBJv2YeZndPs021083S2Z/mu7WZ5g0iTlGDYqelA9gQXGh1F0tUw==" crossorigin="anonymous"></script>
+        <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <a href="#" class="header item">
+                Advertiser Helper
+                </a>
+                <a href="#" class="item">Mythic + Helper</a>
+                <a href="#" class="item">Horrific Vision Helper</a>
+                <a href="#" class="item">Gold Counter</a>
+            </div>
+        </div>
+        <div class="ui main container">
+        <h1 class="ui header">Post M+ Run Formatter</h1>
+        <p>Use this page to product a run submission text ready for the discord bot!</p>
+        <p>Note: Only supports M+ entries </p>
+        <br>
+        <div class="ui selection dropdown" id="keytypedropdown">
+            <input type="hidden" name="KeyType">
+            <i class="dropdown icon"></i>
+            <div class="default text">Key Type</div>
+            <div class="menu transition hidden">
+                <div class="item" data-value="Base">Base</div>
+                <div class="item" data-value="Armor Stack">Armor Stack</div>
+                <div class="item" data-value="Key">Key</div>
+                <div class="item" data-value="Armor & Key">Armor & Key</div>
+                <div class="item" data-value="Base Timed">Base Timed</div>
+                <div class="item" data-value="Armor Stack Timed">Armor Stack Timed</div>
+                <div class="item" data-value="Key Timed">Key Timed</div>
+                <div class="item" data-value="Armor & Key Timed">Armor & Key Timed</div>
+            </div>
+        </div>
+        <!-- Key Level Dropdown -->
+        <div class="ui selection dropdown" id="keyleveldropdown">
+            <input type="hidden" name="KeyLevel">
+            <i class="dropdown icon"></i>
+            <div class="default text">Key Level</div>
+            <div class="menu transition hidden">
+                <div class="item" data-value="10">10</div>
+                <div class="item" data-value="11">11</div>
+                <div class="item" data-value="12">12</div>
+                <div class="item" data-value="13">13</div>
+                <div class="item" data-value="14">14</div>
+                <div class="item" data-value="15">15</div>
+                <div class="item" data-value="16">16</div>
+                <div class="item" data-value="17">17</div>
+                <div class="item" data-value="18">18</div>
+                <div class="item" data-value="19">19</div>
+                <div class="item" data-value="20">20</div>
+            </div>
+        </div>
+        <br><br>
+        <!-- Discount amount -->
+        <div class="ui input">
+            <input type="text" placeholder="Discount Amount" id="discount">
+        </div>
+        <br><br>
+        <!-- Completed Forms input -->
+        <div class="ui form">
+            <div class="field">
+                <label>Completed Forms Text: </label>
+                <textarea id="completedformtext"></textarea>
+            </div>
+        </div>
+        <div class="ui inverted segment">
+            <button class="ui inverted fluid button" id="gobutton">Go</button>
+        </div>
+        <br><br><br>
+        <div class="ui form">
+            <div class="field">
+                <label>Output Text: </label>
+                <textarea id="outputbox"></textarea>
+            </div>
+        </div>
+        <div class="ui inverted segment">
+            <button class="ui inverted button" style="width:49%" style="align:center" id="copybutton">Copy to clipboard</button>
+            <button class="ui inverted button"  style="width:49%" style="align:right" id="clearbutton">Clear</button>
+        </div>
+
+    </body>
+    <script>
+        $('#keyleveldropdown').dropdown();
+        $('#keytypedropdown').dropdown();
+    </script>
+    <script src="mplus_script.js"></script>
+</html>
