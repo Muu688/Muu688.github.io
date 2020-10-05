@@ -17,83 +17,21 @@
                 <a href="" class="header item">
                 Advertiser Helper
                 </a>
-                <a href="" class="item">Mythic + Helper</a>
+                <a href="mplus.html" class="item">Mythic + Helper</a>
                 <a href="visions.html" class="item">Horrific Vision Helper</a>
-                <a href="" class="item">Gold Counter</a>
             </div>
         </div>
         <br><br><br>
         <div class="ui main container">
-        <h1 class="ui header">Post M+ Run Formatter</h1>
-        <p>Use this page to product a run submission text ready for the discord bot!</p>
-        <p>Note: Only supports M+ entries </p>
+        <h1 class="ui header">Advertiser Helper</h1>
+        <p>Welcome to the Advertiser helper!</p>
+        <p>The goal of this page is to facilitate advertisers within a WoW community complete their role easier.</p>
+        <p>Note: There are several prerequities for using this web site...</p>
+        <ul>
+         <li>Access to the Discord Community: <a href="https://discord.gg/huokan">https://discord.gg/huokan</a> </li>
+         <li>The Advertiser role in the discord community, and thus access to the completed-keys/visions</li>
+        </ul>
+        <p> In the case that further assistance is needed, please see the <a href="" onclick='window.open("https://github.com/Muu688/muu688.github.io/wiki");return false;'>help</a> page or raise an <a href="" onclick='window.open("https://github.com/Muu688/muu688.github.io/issues");return false;'></a>issue.</p>
+        <img src="images/longboi.jpeg" alt="Advertising for some time yields a long boi!" width="100%">
         <br>
-        <div class="ui selection dropdown" id="keytypedropdown">
-            <input type="hidden" name="KeyType">
-            <i class="dropdown icon"></i>
-            <div class="default text">Key Type</div>
-            <div class="menu transition hidden">
-                <div class="item" data-value="Base">Base</div>
-                <div class="item" data-value="Armor Stack">Armor Stack</div>
-                <div class="item" data-value="Key">Key</div>
-                <div class="item" data-value="Armor & Key">Armor & Key</div>
-                <div class="item" data-value="Base Timed">Base Timed</div>
-                <div class="item" data-value="Armor Stack Timed">Armor Stack Timed</div>
-                <div class="item" data-value="Key Timed">Key Timed</div>
-                <div class="item" data-value="Armor & Key Timed">Armor & Key Timed</div>
-            </div>
-        </div>
-        <!-- Key Level Dropdown -->
-        <div class="ui selection dropdown" id="keyleveldropdown">
-            <input type="hidden" name="KeyLevel">
-            <i class="dropdown icon"></i>
-            <div class="default text">Key Level</div>
-            <div class="menu transition hidden">
-                <div class="item" data-value="10">10</div>
-                <div class="item" data-value="11">11</div>
-                <div class="item" data-value="12">12</div>
-                <div class="item" data-value="13">13</div>
-                <div class="item" data-value="14">14</div>
-                <div class="item" data-value="15">15</div>
-                <div class="item" data-value="16">16</div>
-                <div class="item" data-value="17">17</div>
-                <div class="item" data-value="18">18</div>
-                <div class="item" data-value="19">19</div>
-                <div class="item" data-value="20">20</div>
-            </div>
-        </div>
-        <br><br>
-        <!-- Discount amount -->
-        <div class="ui input">
-            <input type="text" placeholder="Discount Amount" id="discount">
-        </div>
-        <br><br>
-        <!-- Completed Forms input -->
-        <div class="ui form">
-            <div class="field">
-                <label>Completed Forms Text: </label>
-                <textarea id="completedformtext"></textarea>
-            </div>
-        </div>
-        <div class="ui inverted segment">
-            <button class="ui inverted fluid button" id="gobutton">Go</button>
-        </div>
-        <br><br><br>
-        <div class="ui form">
-            <div class="field">
-                <label>Output Text: </label>
-                <textarea id="outputbox"></textarea>
-            </div>
-        </div>
-        <div class="ui inverted segment">
-            <button class="ui inverted button" style="width:49%" style="align:center" id="copybutton">Copy to clipboard</button>
-            <button class="ui inverted button"  style="width:49%" style="align:right" id="clearbutton">Clear</button>
-        </div>
-
-    </body>
-    <script>
-        $('#keyleveldropdown').dropdown();
-        $('#keytypedropdown').dropdown();
-    </script>
-    <script src="mplus_script.js"></script>
 </html>

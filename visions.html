@@ -15,13 +15,11 @@
 
     <div class="ui fixed inverted menu">
     <div class="ui container">
-      <a href="" class="header item">
+      <a href="index.html" class="header item">
         Advertiser Helper
       </a>
-      <a href="index.html" class="item">Mythic + Helper</a>
+      <a href="mplus.html" class="item">Mythic + Helper</a>
       <a href="" class="item">Horrific Vision Helper</a>
-      <a href="" class="item">Gold Counter</a>
-
     </div>
   </div>
   <br><br><br>
@@ -30,7 +28,18 @@
       <p>Use this page to product a run submission text ready for the discord bot!</p>
       <p>Note: Only supports Vision entries </p>
 <br>
-
+<!-- Advertiser Name -->
+Advertisers Name:
+<div id="advertisername">
+  <div class="ui input">
+      <input type="text" id="advertisernametext" value="Müüdh-barthilas" readonly="true">
+  </div>
+  <div class="ui checkbox">
+    <input type="checkbox" id="advertisernamecheckbox">
+    <label>I'm a different advertiser!</label>
+  </div>
+</div>
+<br>
 <!-- Vision Type -->
 <div class="ui selection dropdown" id="visiontypedropdown">
   <input type="hidden" name="Loot Only / Objectives?">
@@ -89,5 +98,6 @@
 $('#visiontypedropdown').dropdown();
 $('#maskleveldropdown').dropdown();
 </script>
-<script src="vision_script.js"></script>
+<script src="scripts/vision_script.js"></script>
+<script src="/scripts/advertisername.js"></script>
 </html>

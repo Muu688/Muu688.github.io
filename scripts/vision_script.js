@@ -1,5 +1,6 @@
 document.getElementById("gobutton").onclick = function() {
-    myFunction()
+    document.getElementById("outputbox").value = "";
+    myFunction();
 };
 
 document.getElementById("clearbutton").onclick = function() {
@@ -7,14 +8,13 @@ document.getElementById("clearbutton").onclick = function() {
 };
 
 document.getElementById("copybutton").onclick = function() {
-    document.getElementById("outputbox").select();
+
     document.execCommand('copy');
 };
 
 function myFunction() {
     var textArea = document.getElementById('completedformtext');
     var lines = textArea.value.split('\n'); // lines is an array of strings
-
     createOutput(lines);
 }
 
@@ -24,18 +24,16 @@ function processText(line) {
     if (line.match('\@.*$') != null) {
         line = line.match('\@.*$');
         line = line.toString().replace('\@', '');
-
     }
 
     return line;
 }
 
-
 function createOutput(lines) {
     // Creates a series of new <p> elements to create the runsubmission output.
     var output = document.getElementById('outputbox');
     output.value += ('!visioncompleted\n');
-    output.value += ("Müüdh-barthilas\n");
+    output.value += (document.getElementById('advertisernametext').value + '\n');
     output.value += ("Unpaid\n");
     output.value += (document.getElementById('maskleveldropdown').innerText + '\n');
     output.value += (document.getElementById('visiontypedropdown').innerText + '\n');

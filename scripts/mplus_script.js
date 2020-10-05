@@ -1,5 +1,6 @@
 document.getElementById("gobutton").onclick = function() {
-    myFunction()
+    document.getElementById("outputbox").value = "";
+    myFunction();
 };
 
 document.getElementById("clearbutton").onclick = function() {
@@ -41,12 +42,11 @@ function processText(line) {
     return line;
 }
 
-
 function createOutput(lines) {
     // Creates a series of new <p> elements to create the runsubmission output.
     var output = document.getElementById('outputbox');
     output.value += ('!keycompleted\n');
-    output.value += ("Müüdh-barthilas\n");
+    output.value += (document.getElementById('advertisernametext').value + '\n');
     output.value += ("Unpaid\n");
     output.value += (document.getElementById('keyleveldropdown').innerText + '\n');
     output.value += (document.getElementById('keytypedropdown').innerText + '\n');
