@@ -8,7 +8,7 @@ document.getElementById("clearbutton").onclick = function() {
 };
 
 document.getElementById("copybutton").onclick = function() {
-
+    document.getElementById("outputbox").select();
     document.execCommand('copy');
 };
 
