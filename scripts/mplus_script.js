@@ -25,26 +25,20 @@ function processText(line) {
     if (line.match('\@.*$') != null) {
         line = line.match('\@.*$');
         line = line.toString().replace('\@', '');
-        var keyType = document.getElementById('keytypedropdown').innerText;
-
-        // If 'KH' is present in the boosters line, strip it out, along with brackets if any.
-        if (line.includes('KH')) {
-            line = line.toString().replace('KH', '');
-            line = line.toString().replace('\(', '');
-            line = line.toString().replace('\)', '');
-        }
-        // To-do: Redo the logic here to somehow return the boosters name again, but last.
-        if (!keyType.includes('Key')) {
-            console.log('KEYHOLDER REQUIRED');
-        }
     }
+
+    // Strip out KH stuff
+    line = line.toString().replace('\(KH\)', '');
+    line = line.toString().replace('KH', '');
+    line = line.toString().replace('KEY', '');
+    line = line.toString().replace('Keyholder', '');
 
     return line;
 }
 
 function createOutput(lines) {
-    // Creates a series of new <p> elements to create the runsubmission output.
     var output = document.getElementById('outputbox');
+    var keyholder = null;
     output.value += ('!keycompleted\n');
     output.value += (document.getElementById('advertisernametext').value + '\n');
     output.value += ("Unpaid\n");
@@ -55,5 +49,24 @@ function createOutput(lines) {
     // Loop through all lines and process them with fancy regex stuff
     for (var i = 2; i < lines.length; i++) {
         output.value += (processText(lines[i]) + '\n');
+        if (lines[i].includes('KH') || lines[i].includes('Keyholder') || lines[i].includes('(KH)')) {
+            keyholder = processText(lines[i])
+            keyholder = processKeyHolder(keyholder);
+        }
     }
+
+    if(keyholder != null)
+    {
+      output.value += keyholder;
+    }
+}
+
+function processKeyHolder(line)
+{
+  line = line.toString().replace('\(KH\)', '');
+  line = line.toString().replace('KH', '');
+  line = line.toString().replace('KEY', '');
+  line = line.toString().replace('Keyholder', '');
+  console.log(line.toString() + '<< Keyholder during processKeyHolder call');
+  return line;
 }
